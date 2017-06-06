@@ -31,7 +31,7 @@ public class BankOperations {
     public static void printCustomers(ArrayList<Customer> customers) {
         for (Customer customer : customers) {
             System.out.print(customer.getLastName() + " " + customer.getName() + "'s cards: ");
-            for (BankAccount account : customer.getBankAccounts())
+            for (BankAccounts account : customer.getBankAccounts())
                 System.out.print("   " + account.getCardNumber());
             System.out.println();
         }
@@ -44,10 +44,10 @@ public class BankOperations {
      * @param bank bank to print
      */
     public static void printAllCustomersOfBank(Bank bank) {
-        Set<BankAccount> customers = bank.getAccounts();
+        Set<BankAccounts> customers = bank.getAccounts();
         System.out.println("All customers of " + bank.getBankName() + ":");
         int i = 1;
-        for (BankAccount c : customers)
+        for (BankAccounts c : customers)
             System.out.println(i++ + ": " + c.getAccountHolder().getLastName() + " " + c.getAccountHolder().getName());
 
         System.out.println();
@@ -66,9 +66,9 @@ public class BankOperations {
 
         for (int i = 0; i < banks.size(); i++) {
 
-            Set<BankAccount> accounts = banks.get(i).getAccounts();
+            Set<BankAccounts> accounts = banks.get(i).getAccounts();
 
-            for (BankAccount bankAccount : accounts) {
+            for (BankAccounts bankAccount : accounts) {
                 if (bankAccount.getCardNumber().startsWith(range))
                     customers.add(bankAccount.getAccountHolder());
             }
@@ -77,7 +77,7 @@ public class BankOperations {
         System.out.println("Range is: " + range + ". Customers with an appropriate cards: ");
         for (Customer customer : customers) {
             System.out.print(customer.getLastName() + " card(s) number:");
-            for (BankAccount account : customer.getBankAccounts()) {
+            for (BankAccounts account : customer.getBankAccounts()) {
                 if (account.getCardNumber().startsWith(range))
                     System.out.print("   " + account.getCardNumber());
             }

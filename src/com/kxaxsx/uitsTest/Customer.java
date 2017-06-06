@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Customer extends Person {
 
-    private ArrayList<BankAccount> accounts;
+    private ArrayList<BankAccounts> accounts;
 
     /**
      * Constructs a customer object.
@@ -18,6 +18,7 @@ public class Customer extends Person {
     public Customer(String name, String middleName, String lastName, LocalDate birthday) {
         super(name, middleName, lastName, birthday);
         accounts = new ArrayList<>();
+//        accounts.get(0);
     }
 
     /**
@@ -25,14 +26,14 @@ public class Customer extends Person {
      *
      * @param account new account
      */
-    public void addBankAccount(BankAccount account) {
+    public void addBankAccount(BankAccounts account) {
         accounts.add(account);
     }
 
     /**Returns all bank accounts of this customer.
      * @return all bank accounts of this customer
      */
-    public ArrayList<BankAccount> getBankAccounts() {
+    public ArrayList<BankAccounts> getBankAccounts() {
         return accounts;
     }
 

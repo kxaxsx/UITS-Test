@@ -32,7 +32,6 @@ public class Main {
         }*/
         //TASK #1 - Print all customers of the specified bank
         BankOperations.printAllCustomersOfBank(bankList.get(2));
-
         //TASK #2 Print all customers with cards in specified range
         BankOperations.printAllCustomersWithSpecifiedCardRange(bankList, "12");
 
